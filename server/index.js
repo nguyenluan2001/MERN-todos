@@ -18,6 +18,7 @@ app.use("/api/todo",checkAuth,todo)
 //     console.log(users)
 //     res.send("hello word")
 // })
-app.listen("5000",()=>{
+const port=process.env.port || "5000"
+app.listen(port,()=>{
     console.log("server listen at port 5000...")
 })
