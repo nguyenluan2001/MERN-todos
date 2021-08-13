@@ -3,7 +3,7 @@ const router=express.Router()
 const User=require("../models/User")
 const md5=require("md5")
 const jwt=require("jsonwebtoken")
-require('dotenv').config()
+require('dotenv').config("../../.env")
 const {checkAuth} =require("../middleware/auth")
 router.post("/register",async (req,res)=>{
     let {username,password}=req.body
@@ -34,7 +34,6 @@ router.post("/register",async (req,res)=>{
 })
 router.post("/login",async (req,res)=>{
     let {username,password}=req.body
-    console.log(req.body)
     if(!username || !password)
     {
          res.json({status:"fail",message:"User or password is missing"})
